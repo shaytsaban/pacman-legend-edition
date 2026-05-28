@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Pac-Man: The Legend Edition</title>
+  <!-- Google Fonts for retro arcade aesthetic -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="glass-bg"></div>
+  
+  <div class="game-container">
+    <!-- Header/Dashboard Panel -->
+    <header class="game-header">
+      <div class="title-container">
+        <h1 class="neon-text">PAC-MAN</h1>
+        <div class="subtitle">LEGEND EDITION</div>
+      </div>
+      
+      <div class="stats-panel">
+        <div class="stat-box">
+          <span class="stat-label">SCORE</span>
+          <span id="score-val" class="stat-value neon-blue">0000</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-label">HIGH SCORE</span>
+          <span id="high-score-val" class="stat-value neon-pink">0000</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-label">LIVES</span>
+          <div id="lives-container" class="lives-row">
+            <div class="glowing-pacman"></div>
+            <div class="glowing-pacman"></div>
+            <div class="glowing-pacman"></div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Game Board Arena -->
+    <div class="arcade-cabinet">
+      <div class="cabinet-screen">
+        <canvas id="game-canvas" width="448" height="496"></canvas>
+        
+        <!-- Interactive Start Overlay -->
+        <div id="menu-overlay" class="screen-overlay active">
+          <h2 class="arcade-title neon-orange">INSERT COIN</h2>
+          <div class="ghost-showcase">
+            <img src="assets/ghost_guy.png" alt="Legend Ghost" class="boss-ghost-img">
+            <div class="ghost-name neon-pink">THE GHOST</div>
+            <p class="ghost-desc">Watch out! This custom boss is smarter, faster, and follows you everywhere.</p>
+          </div>
+          <button id="start-btn" class="arcade-btn">START GAME</button>
+          <div class="control-tip">Use WASD, Arrow keys, or swipe to steer.</div>
+        </div>
+
+        <!-- Pause / Game Over Overlay -->
+        <div id="status-overlay" class="screen-overlay">
+          <h2 id="status-title" class="arcade-title neon-red">GAME OVER</h2>
+          <div class="final-score-box">
+            <p>FINAL SCORE</p>
+            <h3 id="final-score-val" class="neon-gold">0000</h3>
+          </div>
+          <button id="restart-btn" class="arcade-btn">PLAY AGAIN</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sidebar and Control Panel -->
+    <div class="control-panel">
+      <!-- Custom Web Audio controls -->
+      <div class="audio-controls">
+        <button id="sound-toggle" class="control-icon-btn active" title="Toggle Synth Sound">
+          <svg viewBox="0 0 24 24" width="24" height="24">
+            <path fill="currentColor" d="M14,3.23V5.29C16.89,6.15 19,8.83 19,12C19,15.17 16.89,17.85 14,18.71V20.77C18,19.86 21,16.28 21,12C21,7.72 18,4.14 14,3.23M16.5,12C16.5,10.23 15.5,8.71 14,7.97V16C15.5,15.29 16.5,13.77 16.5,12M3,9V15H7L12,20V4L7,9H3Z"/>
+          </svg>
+          <span>SYNTH AUDIO</span>
+        </button>
+      </div>
+
+      <!-- Instruction Cards -->
+      <div class="guide-card">
+        <div class="guide-title">HOW TO PLAY</div>
+        <div class="guide-item">
+          <span class="key-cap">▲</span>
+          <span class="key-cap">▼</span>
+          <span class="key-cap">◄</span>
+          <span class="key-cap">►</span>
+          <span class="guide-text">Navigate the Maze</span>
+        </div>
+        <div class="guide-item">
+          <span class="pellet-icon"></span>
+          <span class="guide-text">Eat Pellets for Points</span>
+        </div>
+        <div class="guide-item">
+          <span class="power-pellet-icon"></span>
+          <span class="guide-text">Power Pellets weaken The Ghost</span>
+        </div>
+      </div>
+
+      <!-- Mobile Virtual Joysticks -->
+      <div class="virtual-dpad">
+        <button class="dpad-btn up" id="dpad-up">▲</button>
+        <div class="dpad-middle">
+          <button class="dpad-btn left" id="dpad-left">◄</button>
+          <button class="shoot-btn" id="virtual-shoot">🌭 SHOOT</button>
+          <button class="dpad-btn right" id="dpad-right">►</button>
+        </div>
+        <button class="dpad-btn down" id="dpad-down">▼</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="app-footer">
+    <p>Pac-Man Legend Edition © 2026. Made with ❤️ for shaytsaban.</p>
+  </footer>
+
+  <script src="game.js?v=5"></script>
+</body>
+</html>
