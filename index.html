@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Pac-Man: The Legend Edition</title>
+  <title>Pac-Man: Aviv Ruffel Edition</title>
   <!-- Google Fonts for retro arcade aesthetic -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +18,7 @@
     <header class="game-header">
       <div class="title-container">
         <h1 class="neon-text">PAC-MAN</h1>
-        <div class="subtitle">LEGEND EDITION</div>
+        <div class="subtitle">AVIV RUFFEL EDITION</div>
       </div>
       
       <div class="stats-panel">
@@ -29,6 +29,10 @@
         <div class="stat-box">
           <span class="stat-label">HIGH SCORE</span>
           <span id="high-score-val" class="stat-value neon-pink">0000</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-label">LEVEL</span>
+          <span id="level-val" class="stat-value neon-orange">1</span>
         </div>
         <div class="stat-box">
           <span class="stat-label">LIVES</span>
@@ -50,12 +54,12 @@
         <div id="menu-overlay" class="screen-overlay active">
           <h2 class="arcade-title neon-orange">INSERT COIN</h2>
           <div class="ghost-showcase">
-            <img src="assets/ghost_guy.png" alt="Legend Ghost" class="boss-ghost-img">
-            <div class="ghost-name neon-pink">THE GHOST</div>
-            <p class="ghost-desc">Watch out! This custom boss is smarter, faster, and follows you everywhere.</p>
+            <img src="assets/ghost_guy.png" alt="Aviv Ruffel Ghost" class="boss-ghost-img">
+            <div class="ghost-name neon-pink">AVIV RUFFEL</div>
+            <p class="ghost-desc">Watch out! More Ruffels appear each level — and they ALL yell תלמד מסים! Shoot sausages 🌭 to stun them!</p>
           </div>
           <button id="start-btn" class="arcade-btn">START GAME</button>
-          <div class="control-tip">Use WASD, Arrow keys, or swipe to steer.</div>
+          <div class="control-tip">WASD / Arrows to move · SPACE to shoot sausages 🌭</div>
         </div>
 
         <!-- Pause / Game Over Overlay -->
@@ -119,6 +123,6 @@
     <p>Pac-Man Legend Edition © 2026. Made with ❤️ for shaytsaban.</p>
   </footer>
 
-  <script src="game.js?v=5"></script>
+  <script src="game.js?v=6"></script>
 </body>
 </html>
